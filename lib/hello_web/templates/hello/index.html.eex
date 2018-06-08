@@ -2,4 +2,7 @@
   <h2>Hello World, from Phoenix!</h2>
 </div>
 
-<a href="<%= page_path(@conn, :index) %>">To the Welcome Page!</a>
+<a href="<%= page_path(@conn, :index) %>">To the Welcome Page!</a> |
+<a
+  href="<%= users_path(@conn, :show, 17, admin: true, active: false) %>"
+>Show User with Query Params!</a>
