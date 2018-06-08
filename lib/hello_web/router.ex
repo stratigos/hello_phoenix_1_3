@@ -33,7 +33,7 @@ defmodule HelloWeb.Router do
     the following routes would first go through an authentication routine, and
     then an authorization routine (_signed in? also an admin?_ ...).
     """
-    pipe_through [:authenticate_user, :ensure_admin]
+    #pipe_through [:authenticate_user, :ensure_admin]
 
     """
     Example forwarding all background jobs (requests to "/jobs") to a specific
@@ -42,7 +42,7 @@ defmodule HelloWeb.Router do
     a `name` parameter is set, which is presumably used by the given module.
     @see [options list](https://hexdocs.pm/phoenix/Phoenix.Router.html#scope/2)
     """
-    forward "/jobs", BackgroundJob.Plug, name: "Hello Phoenix"
+    forward "/jobs", BackgroundJob.Plug, name: "Hello Phoenix: Background Jobs"
   end
 
   # Other scopes may use custom stacks.
