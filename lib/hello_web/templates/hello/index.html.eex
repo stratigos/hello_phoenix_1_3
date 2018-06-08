@@ -5,4 +5,5 @@
 <a href="<%= page_path(@conn, :index) %>">To the Welcome Page!</a> |
 <a
   href="<%= users_path(@conn, :show, 17, admin: true, active: false) %>"
->Show User with Query Params!</a>
+>Show User with Query Params!</a> | 
+<a href="<%= users_url(@conn, :index) %>">Full URL Helper!</a>
