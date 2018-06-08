@@ -27,6 +27,12 @@ defmodule HelloWeb.Router do
     resources "/users", UsersController
     resources "/posts", PostController, only: [:index, :show]
     resources "/comments", CommentController, except: [:delete]
+
+    """
+    Example forwarding all background jobs (requests to "/jobs") to a specific
+    module (in this case, `BackgroundJob`)
+    """
+    forward "/jobs", BackgroundJob.Plug
   end
 
   # Other scopes may use custom stacks.
