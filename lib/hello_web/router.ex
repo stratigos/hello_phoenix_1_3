@@ -38,8 +38,11 @@ defmodule HelloWeb.Router do
     """
     Example forwarding all background jobs (requests to "/jobs") to a specific
     module (in this case, `BackgroundJob`)
+    Additionally, options are passed through the 3rd argument. In this case, 
+    a `name` parameter is set, which is presumably used by the given module.
+    @see [options list](https://hexdocs.pm/phoenix/Phoenix.Router.html#scope/2)
     """
-    forward "/jobs", BackgroundJob.Plug
+    forward "/jobs", BackgroundJob.Plug, name: "Hello Phoenix"
   end
 
   # Other scopes may use custom stacks.
