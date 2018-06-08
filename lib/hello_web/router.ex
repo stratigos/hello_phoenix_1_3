@@ -29,6 +29,13 @@ defmodule HelloWeb.Router do
     resources "/comments", CommentController, except: [:delete]
 
     """
+    Example of forwarding through a specific pipeline. In this example, all of
+    the following routes would first go through an authentication routine, and
+    then an authorization routine (_signed in? also an admin?_ ...).
+    """
+    pipe_through [:authenticate_user, :ensure_admin]
+
+    """
     Example forwarding all background jobs (requests to "/jobs") to a specific
     module (in this case, `BackgroundJob`)
     """
